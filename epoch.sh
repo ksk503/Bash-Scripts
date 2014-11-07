@@ -5,7 +5,7 @@
 if [[ $# -lt 1 ]] ;
   then
     echo
-    echo "Usage: epoch.sh start-date end-date[optional"
+    echo "Usage: epoch.sh start-date end-date[optional]"
     echo "Ex: epoch.sh '2014-02-01 12:00' '2014-02-28 23:59:59'"
     echo
     exit 0
