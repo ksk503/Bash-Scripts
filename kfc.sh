@@ -7,13 +7,9 @@ declare -a farray=('/etc/passwd' '/etc/resolv.conf' 'test.txt')
 #echo ${farray[@]}
 
 for F in ${farray[@]}; do
-  #get mtime of file
-  ftime=`stat -c "%Y" $F` 
-  #current time
-  ctime=`date +%s` 
-  #Calculate difference
-  dtime=$(( ($ctime - $ftime) / 86440))  
-  #Uncomment echo for testing
+  ftime=`stat -c "%Y" $F` #get mtime of file
+  ctime=`date +%s` #current time
+  dtime=$(( ($ctime - $ftime) / 86440))  #Calculate difference
   #echo $F $dtime
   #Test if time diff is less than 2 days
   if [ $dtime -lt 2 ]; then
