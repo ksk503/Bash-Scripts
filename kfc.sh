@@ -14,7 +14,7 @@ for F in ${farray[@]}; do
   #Test if time diff is less than 2 days
   if [ $dtime -lt 2 ]; then
     #echo "$F changed $dtime days ago."
-    #User logger to write to syslog
+    #Use logger to write to syslog
     /usr/bin/logger -t TEST "$F changed $dtime days ago."
   fi
 done
