@@ -2,7 +2,8 @@
 # Basic script to get epoch times
 
 # Test to ensure at least one argument
-if [[ $# -lt 1 ]] ;
+function usage {
+  if [[ $# -lt 1 ]] ;
   then
     echo
     echo "Usage: epoch.sh start-date end-date[optional]"
@@ -10,6 +11,7 @@ if [[ $# -lt 1 ]] ;
     echo
     exit 0
 fi
+}
 
 # Set sd (start date) and ed (end date) variables
 sd=$1
@@ -21,15 +23,20 @@ function epoch {
   end=$(date -d "$ed" +%s)
 }
 
-# Run function and print out results
-epoch
-echo "Start Date: $start"
 
-if [[ -z "$ed" ]] ;
-  then
-    exit 0
+function outage {
+  echo "Start Date: $start"
+  if [[ -z "$ed" ]] ;
+    then
+      exit 0
   else
     echo "End Date:   $end"
 fi
+}
+
+# Run function and print out results
+usage
+epoch
+outage
 
 exit 0
