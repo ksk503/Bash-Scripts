@@ -2,8 +2,7 @@
 # Basic script to get epoch times
 
 # Test to ensure at least one argument
-function usage {
-  if [[ $# -lt 1 ]] ;
+if [[ $# -lt 1 ]] ;
   then
     echo
     echo "Usage: epoch.sh start-date end-date[optional]"
@@ -11,7 +10,6 @@ function usage {
     echo
     exit 0
 fi
-}
 
 # Set sd (start date) and ed (end date) variables
 sd=$1
@@ -35,7 +33,6 @@ fi
 }
 
 # Run function and print out results
-usage
 epoch
 outage
 
